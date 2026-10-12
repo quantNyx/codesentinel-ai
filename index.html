@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080d11">
+    <meta name="description" content="CodeSentinel AI brings actionable application security findings into your development workflow.">
+    <title>CodeSentinel AI — Security overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;450;500;550;600;650;700;750&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="CodeSentinel home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3.5 27 8v7.5c0 7.15-4.74 11.53-11 13-6.26-1.47-11-5.85-11-13V8l11-4.5Z" stroke="currentColor" stroke-width="1.7"/><path d="m11.3 15.7 3.1 3.1 6.5-6.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="brand-copy"><span class="brand-name">code<span>sentinel</span></span><small>SECURITY PLATFORM</small></span>
+        </a>
+
+        <div class="workspace-picker">
+          <span class="workspace-avatar">Q</span>
+          <span class="workspace-copy"><strong>QuantNyx</strong><small>Free workspace</small></span>
+          <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <p class="nav-label">WORKSPACE</p>
+          <button class="nav-item active" data-page="overview" aria-label="Overview"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5.5" height="5.5" rx="1"/><rect x="11.5" y="3" width="5.5" height="3.5" rx="1"/><rect x="11.5" y="9.5" width="5.5" height="7.5" rx="1"/><rect x="3" y="11.5" width="5.5" height="5.5" rx="1"/></svg><span>Overview</span></button>
+          <button class="nav-item" data-page="repositories" aria-label="Repositories"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h8l4 4v9H4z"/><path d="M12 3.5v4h4M7 11h6m-6 3h6"/></svg><span>Repositories</span><span class="nav-count">6</span></button>
+          <button class="nav-item" data-page="findings" aria-label="Findings"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 18 17H2L10 3Z"/><path d="M10 8v4m0 2.5v.1"/></svg><span>Findings</span><span class="nav-count alert-count">12</span></button>
+          <button class="nav-item" data-page="activity" aria-label="Activity"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h3l2-6 4 12 2-6h3"/></svg><span>Activity</span></button>
+
+          <p class="nav-label nav-label-spaced">CONFIGURATION</p>
+          <button class="nav-item" data-action="connect" aria-label="Integrations"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 12.5 5.8 14.2a3 3 0 0 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0m3.7.5 1.7-1.7a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0m-5-3 8-4"/></svg><span>Integrations</span><span class="nav-dot"></span></button>
+          <button class="nav-item" data-action="settings" aria-label="Settings"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3"/><path d="m16.3 11.8 1.1 1.9-2 2-1.9-1.1a6.7 6.7 0 0 1-1.2.5L11.7 17H8.9l-.6-2a6.7 6.7 0 0 1-1.2-.5l-1.9 1.1-2-2 1.1-1.9a6.7 6.7 0 0 1-.5-1.3l-2-.5V7.2l2-.6a6.7 6.7 0 0 1 .5-1.2L3.2 3.5l2-2L7.1 2.6a6.7 6.7 0 0 1 1.3-.5L8.9.2h2.8l.6 1.9a6.7 6.7 0 0 1 1.2.5l1.9-1.1 2 2-1.1 1.9a6.7 6.7 0 0 1 .5 1.3l2 .5v2.8l-2 .6a6.7 6.7 0 0 1-.5 1.2Z" transform="translate(-.4 1.5) scale(.9)"/></svg><span>Settings</span></button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="plan-card">
+            <div class="plan-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 2 5.3 5.5 2.2-5.5 2.1L10 17l-2-5.4-5.5-2.1L8 7.3 10 2Z"/></svg></div>
+            <strong>Level up your security</strong>
+            <p>Unlock unlimited scans and team-wide protection.</p>
+            <button class="upgrade-button" data-action="upgrade">Explore plans <span>→</span></button>
+          </div>
+          <button class="user-profile" data-action="profile">
+            <span class="profile-avatar">SA</span>
+            <span class="profile-copy"><strong>Sakib Al Hasan</strong><small>Admin</small></span>
+            <svg class="more-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="10" r="1"/><circle cx="10" cy="10" r="1"/><circle cx="16" cy="10" r="1"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>QuantNyx</span><span class="breadcrumb-separator">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <div class="connection-status"><span class="status-pulse"></span><span>All systems operational</span></div>
+            <button class="icon-button help-button" aria-label="Help and documentation" data-action="help"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M8.1 7.5a2 2 0 1 1 3.3 1.5c-.9.7-1.4 1-1.4 2.1m0 2.5v.1"/></svg></button>
+            <button class="icon-button notification-button" aria-label="Notifications" data-action="notifications"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 8a5.5 5.5 0 1 0-11 0c0 6-2 6-2 7.5h15C17.5 14 15.5 14 15.5 8Zm-7.5 11h4"/></svg><span class="notification-dot"></span></button>
+          </div>
+        </header>
+
+        <div class="page-container">
+          <section class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="live-dot"></span> YOUR SECURITY COMMAND CENTER</div>
+              <h1 id="page-title">Good morning, Sakib <span class="wave">✳</span></h1>
+              <p class="page-subtitle" id="page-subtitle">Here’s what’s happening across your codebase today.</p>
+            </div>
+            <div class="heading-actions">
+              <button class="button button-secondary" data-action="connect"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg> Connect repository</button>
+              <button class="button button-primary" id="scan-button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m11.3 2-7 9h5.4l-.7 7 7-9h-5.4l.7-7Z"/></svg> Run a scan</button>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Security metrics">
+            <article class="stat-card">
+              <div class="stat-label">TOTAL REPOSITORIES <span class="stat-info" title="Repositories connected to your workspace">i</span></div>
+              <div class="stat-main"><span class="stat-number" id="stat-repositories">06</span><span class="stat-icon stat-icon-green"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h7l3 3v10H5zM12 3.5v3h3M7.5 10h5m-5 3h5"/></svg></span></div>
+              <div class="stat-foot"><span class="stat-neutral">↗ &nbsp;2</span><span>added this month</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-label">OPEN FINDINGS <span class="stat-info" title="Unresolved security issues">i</span></div>
+              <div class="stat-main"><span class="stat-number" id="stat-findings">12</span><span class="stat-icon stat-icon-amber"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 18 17H2L10 3Z"/><path d="M10 8v4m0 2.5v.1"/></svg></span></div>
+              <div class="stat-foot"><span class="stat-change negative">↑ 3</span><span>since last week</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-label">CRITICAL &amp; HIGH <span class="stat-info" title="Urgent findings that need attention">i</span></div>
+              <div class="stat-main"><span class="stat-number" id="stat-critical">04</span><span class="stat-icon stat-icon-red"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 18 17H2L10 3Z"/><path d="M10 8v4m0 2.5v.1"/></svg></span></div>
+              <div class="stat-foot"><span class="stat-change positive">↓ 2</span><span>from last week</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-label">RISK SCORE <span class="stat-info" title="Workspace-wide exposure score">i</span></div>
+              <div class="stat-main"><span class="stat-number">28<span class="stat-suffix">/100</span></span><span class="risk-mini" aria-label="Low risk"><span></span><span></span><span></span><span></span><span></span></span></div>
+              <div class="stat-foot"><span class="risk-label">● LOW RISK</span><span>↓ 8 pts this month</span></div>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <div class="left-column">
+              <article class="panel findings-panel" id="findings-panel">
+                <div class="panel-heading">
+                  <div><div class="panel-title-row"><h2>Security findings</h2><span class="result-count" id="visible-count">12</span></div><p>Issues detected across your repositories</p></div>
+                  <button class="text-button" data-page="findings">View all findings <span>→</span></button>
+                </div>
+                <div class="findings-toolbar">
+                  <div class="filter-tabs" role="tablist" aria-label="Filter findings">
+                    <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All <span>12</span></button>
+                    <button class="filter-tab" data-filter="critical" role="tab" aria-selected="false"><span class="severity-dot dot-critical"></span>Critical <span>1</span></button>
+                    <button class="filter-tab" data-filter="high" role="tab" aria-selected="false"><span class="severity-dot dot-high"></span>High <span>3</span></button>
+                    <button class="filter-tab" data-filter="medium" role="tab" aria-selected="false"><span class="severity-dot dot-medium"></span>Medium <span>5</span></button>
+                  </div>
+                  <label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.2"/><path d="m12.6 12.6 4 4"/></svg><input id="finding-search" type="search" placeholder="Search..." aria-label="Search findings"></label>
+                </div>
+                <div class="table-scroll">
+                  <table class="findings-table">
+                    <thead><tr><th>FINDING</th><th>SEVERITY</th><th>REPOSITORY</th><th>DETECTED</th><th><span class="sr-only">Open finding</span></th></tr></thead>
+                    <tbody id="findings-body"></tbody>
+                  </table>
+                  <div class="empty-state" id="empty-state" hidden><span>✓</span><strong>No findings match your search</strong><p>Try another keyword or severity filter.</p><button class="text-button" data-action="clear-filters">Clear filters</button></div>
+                </div>
+                <div class="table-footer"><span>Showing <strong id="showing-range">1–5</strong> of <strong>12</strong> findings</span><div class="pagination"><button aria-label="Previous page" disabled>‹</button><button class="page-number active" aria-current="page">1</button><button class="page-number" data-action="next-page">2</button><button aria-label="Next page" data-action="next-page">›</button></div></div>
+              </article>
+
+              <article class="panel repositories-panel" id="repositories-panel">
+                <div class="panel-heading">
+                  <div><div class="panel-title-row"><h2>Your repositories</h2><span class="result-count">6</span></div><p>Monitor security across your codebase</p></div>
+                  <button class="text-button" data-page="repositories">All repositories <span>→</span></button>
+                </div>
+                <div class="repository-list" id="repository-list"></div>
+              </article>
+            </div>
+
+            <div class="right-column">
+              <article class="panel scan-panel">
+                <div class="scan-panel-heading"><div><span class="panel-kicker"><span class="live-dot"></span> SCAN ACTIVITY</span><h2>Security over time</h2></div><button class="period-select" aria-label="Time period: last 7 days">7 days <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button></div>
+                <div class="chart-legend"><span><i class="legend-dot legend-scans"></i>Scans</span><span><i class="legend-dot legend-findings"></i>Findings</span></div>
+                <div class="chart-wrap">
+                  <div class="chart-y-labels"><span>12</span><span>8</span><span>4</span><span>0</span></div>
+                  <svg class="activity-chart" viewBox="0 0 440 158" role="img" aria-label="Scans and findings for the last seven days, peaking on Friday">
+                    <defs><linearGradient id="area-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#50df9b" stop-opacity=".14"/><stop offset="100%" stop-color="#50df9b" stop-opacity="0"/></linearGradient></defs>
+                    <path class="chart-gridline" d="M14 16H430M14 55H430M14 94H430M14 132H430"/>
+                    <path class="chart-area" d="M21 96 87 78 153 88 219 44 285 66 351 30 418 52V132H21Z"/>
+                    <path class="chart-line chart-line-scans" d="M21 96 87 78 153 88 219 44 285 66 351 30 418 52"/>
+                    <path class="chart-line chart-line-findings" d="M21 115 87 105 153 112 219 91 285 101 351 83 418 93"/>
+                    <g class="chart-points"><circle cx="21" cy="96" r="3"/><circle cx="87" cy="78" r="3"/><circle cx="153" cy="88" r="3"/><circle cx="219" cy="44" r="3"/><circle cx="285" cy="66" r="3"/><circle cx="351" cy="30" r="3"/><circle cx="418" cy="52" r="3"/></g>
+                    <g class="chart-x-labels"><text x="21" y="152">MON</text><text x="87" y="152">TUE</text><text x="153" y="152">WED</text><text x="219" y="152">THU</text><text x="285" y="152">FRI</text><text x="351" y="152">SAT</text><text x="418" y="152">SUN</text></g>
+                  </svg>
+                </div>
+                <div class="scan-summary"><div><span class="summary-number">47</span><span class="summary-label">total scans</span></div><div class="summary-divider"></div><div><span class="summary-number green-text">99.2<span class="summary-unit">%</span></span><span class="summary-label">scan success</span></div><div class="summary-link">↗ 18% <span>vs last week</span></div></div>
+              </article>
+
+              <article class="panel pipeline-panel">
+                <div class="pipeline-heading"><div><span class="panel-kicker">UNDER THE HOOD</span><h2>AI analysis pipeline</h2></div><span class="pipeline-status"><span></span> ACTIVE</span></div>
+                <p class="pipeline-description">Every change, analyzed in context.</p>
+                <div class="pipeline-steps">
+                  <div class="pipeline-step"><span class="step-icon step-icon-purple"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h12v13H4zM7 7h6m-6 3h6m-6 3h3"/></svg></span><span class="step-copy"><strong>AST parsing</strong><small>C · C++ · Python</small></span><span class="step-check">✓</span></div>
+                  <span class="step-connector"></span>
+                  <div class="pipeline-step"><span class="step-icon step-icon-blue"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="5" cy="10" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="15" cy="15" r="2"/><path d="m7 9 6-3m-6 5 6 3"/></svg></span><span class="step-copy"><strong>Graph analysis</strong><small>Control &amp; data flow</small></span><span class="step-check">✓</span></div>
+                  <span class="step-connector"></span>
+                  <div class="pipeline-step"><span class="step-icon step-icon-green"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5v2m0 11v2m7.5-7.5h-2m-11 0h-2m13.3-5.3-1.4 1.4M5.6 14.4l-1.4 1.4m11.2 0L14 14.4M5.6 5.6 4.2 4.2"/><circle cx="10" cy="10" r="4"/></svg></span><span class="step-copy"><strong>Threat scoring</strong><small>ML confidence ranked</small></span><span class="step-check">✓</span></div>
+                </div>
+                <div class="pipeline-footer"><span class="model-badge">CS-GNN v2.4</span><span><i></i> P95 latency <strong>38s</strong></span><span>Updated 2m ago</span></div>
+              </article>
+
+              <article class="tip-card">
+                <div class="tip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 2.1 5.6L18 10l-5.9 2.4L10 18l-2.1-5.6L2 10l5.9-2.4L10 2Z"/></svg></div>
+                <div><strong>Security tip</strong><p>Regular scans on every pull request help catch vulnerabilities <span>before they ship.</span></p></div>
+                <button aria-label="Dismiss security tip" data-action="dismiss-tip">×</button>
+              </article>
+            </div>
+          </section>
+          <footer class="page-footer"><span>© 2026 CodeSentinel AI <span class="footer-separator">·</span> Built for secure code</span><span><span class="footer-lock">⌑</span> End-to-end encrypted <span class="footer-separator">·</span> v2.4.0</span></footer>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-header"><span class="dialog-brand"><span class="dialog-brand-icon">⌘</span> CODESENTINEL</span><button class="icon-button dialog-close" aria-label="Close dialog" data-action="close-dialog">×</button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+  </body>
+</html>
